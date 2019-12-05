@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
         score += add;
         //textScore.text = score + "";
         textScore.text = score.ToString();  // 整數.轉字串()
+
+        SetHeightScore();
     }
 
     /// <summary>
@@ -51,7 +53,12 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void SetHeightScore()
     {
-
+        // 如果目前分數 > 最高分數
+        if (score > scoreHeight)
+        {
+            // 最高分數 = 目前分數
+            scoreHeight = score;
+        }
     }
 
     /// <summary>
