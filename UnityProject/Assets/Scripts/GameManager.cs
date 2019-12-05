@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;   // 引用 介面 API
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject pipe; // GameObject 可以存放預製物以及場景上的物件
     [Header("介面群組")]
     public GameObject goUI;
+    [Header("分數介面")]
+    public Text textScore;
 
     /// <summary>
     /// 生成水管功能
@@ -39,6 +42,8 @@ public class GameManager : MonoBehaviour
     public void AddScore(int add)
     {
         score += add;
+        //textScore.text = score + "";
+        textScore.text = score.ToString();  // 整數.轉字串()
     }
 
     /// <summary>

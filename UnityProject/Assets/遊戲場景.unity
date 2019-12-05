@@ -1871,6 +1871,7 @@ MonoBehaviour:
   scoreHeight: 0
   pipe: {fileID: 2877372307237172583, guid: a7f2233a65d2c5f49b1ed110328fc327, type: 3}
   goUI: {fileID: 1366877226}
+  textScore: {fileID: 1398995253}
 --- !u!4 &2139400346
 Transform:
   m_ObjectHideFlags: 0
