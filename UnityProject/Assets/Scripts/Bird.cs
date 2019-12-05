@@ -48,6 +48,7 @@ public class Bird : MonoBehaviour
     /// </summary>
     private void Dead()
     {
+        if (dead) return; // 跳出此方法
         dead = true;
         gm.GameOver();
         aud.PlayOneShot(soundHit, 1.5f);
@@ -58,6 +59,7 @@ public class Bird : MonoBehaviour
     /// </summary>
     private void PassPipe()
     {
+        if (dead) return; // 跳出此方法
         //print("加分!");
         aud.PlayOneShot(soundAdd, 2);
         gm.AddScore(1);

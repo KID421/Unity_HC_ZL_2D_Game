@@ -54,9 +54,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void SetHeightScore()
     {
-        // 取得最高分數
-        scoreHeight = PlayerPrefs.GetInt("最高分數");
-
         // 如果目前分數 > 最高分數
         if (score > scoreHeight)
         {
@@ -81,5 +78,9 @@ public class GameManager : MonoBehaviour
     {
         // 延遲重複調用方法("方法名稱"，延遲時間，重複頻率)
         InvokeRepeating("SpawnPipe", 0, 1.5f);
+
+        // 遊戲開始 更新 最高分數介面
+        scoreHeight = PlayerPrefs.GetInt("最高分數");
+        textHeight.text = scoreHeight.ToString();
     }
 }
