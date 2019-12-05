@@ -58,7 +58,7 @@ public class Bird : MonoBehaviour
     /// </summary>
     private void PassPipe()
     {
-
+        print("加分!");
     }
 
     // 監聽玩家輸入：滑鼠、鍵盤、搖桿
@@ -78,6 +78,13 @@ public class Bird : MonoBehaviour
     // 觸發事件：觸發其他碰撞器開始時執行一次 (針對勾選 IsTrigger 的物件)
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Dead();
+        if (collision.gameObject.name == "水管 - 上" || collision.gameObject.name == "水管 - 下")
+        {
+            Dead();
+        }
+        if (collision.gameObject.name == "加分區域")
+        {
+            PassPipe();
+        }
     }
 }
