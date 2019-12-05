@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject goUI;
     [Header("分數介面")]
     public Text textScore;
+    public Text textHeight;
 
     /// <summary>
     /// 生成水管功能
@@ -53,12 +54,19 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void SetHeightScore()
     {
+        // 取得最高分數
+        scoreHeight = PlayerPrefs.GetInt("最高分數");
+
         // 如果目前分數 > 最高分數
         if (score > scoreHeight)
         {
             // 最高分數 = 目前分數
             scoreHeight = score;
+
+            PlayerPrefs.SetInt("最高分數", scoreHeight);
         }
+
+        textHeight.text = scoreHeight.ToString();
     }
 
     /// <summary>

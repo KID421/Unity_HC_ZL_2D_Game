@@ -1698,7 +1698,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 999
+  m_Text: 0
 --- !u!222 &1899897423
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1872,6 +1872,7 @@ MonoBehaviour:
   pipe: {fileID: 2877372307237172583, guid: a7f2233a65d2c5f49b1ed110328fc327, type: 3}
   goUI: {fileID: 1366877226}
   textScore: {fileID: 1398995253}
+  textHeight: {fileID: 1899897422}
 --- !u!4 &2139400346
 Transform:
   m_ObjectHideFlags: 0
