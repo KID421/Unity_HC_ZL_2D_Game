@@ -27,7 +27,7 @@ public class Bird : MonoBehaviour
         // 如果 按下 左鍵
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            print("按下左鍵");
+            //print("按下左鍵");
             
             goScore.SetActive(true);    // 分數 顯示
             goGM.SetActive(true);       // GM 顯示
@@ -58,7 +58,9 @@ public class Bird : MonoBehaviour
     /// </summary>
     private void PassPipe()
     {
-        print("加分!");
+        //print("加分!");
+        aud.PlayOneShot(soundAdd, 2);
+        gm.AddScore(1);
     }
 
     // 監聽玩家輸入：滑鼠、鍵盤、搖桿
@@ -70,7 +72,7 @@ public class Bird : MonoBehaviour
     // 碰撞事件：碰到其他碰撞器開始時執行一次 (碰到物件的碰撞資訊)
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print(collision.gameObject.name);
+        //print(collision.gameObject.name);
 
         Dead();
     }
@@ -82,6 +84,10 @@ public class Bird : MonoBehaviour
         {
             Dead();
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
         if (collision.gameObject.name == "加分區域")
         {
             PassPipe();

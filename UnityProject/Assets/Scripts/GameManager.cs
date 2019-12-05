@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     /// <param name="add">要添加的分數</param>
     public void AddScore(int add)
     {
-
+        score += add;
     }
 
     /// <summary>
