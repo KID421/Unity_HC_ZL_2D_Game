@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         goUI.SetActive(true);
+        Ground.speed = 0;
     }
 
     private void Start()
