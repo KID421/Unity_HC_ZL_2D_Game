@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;   // 引用 介面 API
+using UnityEngine.UI;                   // 引用 介面 API
+using UnityEngine.SceneManagement;      // 引用 場景管理 API
 
 public class GameManager : MonoBehaviour
 {
@@ -80,7 +81,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void Replay()
     {
-        Application.LoadLevel("遊戲場景");  // 應用程式.載入關卡("關卡名稱")
+        // Application.LoadLevel("遊戲場景");   // 應用程式.載入關卡("關卡名稱") 舊版 API
+        SceneManager.LoadScene("遊戲場景");     // 場景管理.載入場景("場景名稱") 新版 API
     }
 
     /// <summary>
