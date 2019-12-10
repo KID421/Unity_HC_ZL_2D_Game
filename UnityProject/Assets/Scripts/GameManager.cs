@@ -75,6 +75,22 @@ public class GameManager : MonoBehaviour
         Ground.speed = 0;
     }
 
+    /// <summary>
+    /// 重新遊戲
+    /// </summary>
+    public void Replay()
+    {
+        Application.LoadLevel("遊戲場景");  // 應用程式.載入關卡("關卡名稱")
+    }
+
+    /// <summary>
+    /// 離開遊戲
+    /// </summary>
+    public void Exit()
+    {
+        Application.Quit();                 // 應用程式.離開遊戲
+    }
+
     private void Start()
     {
         // 延遲重複調用方法("方法名稱"，延遲時間，重複頻率)
