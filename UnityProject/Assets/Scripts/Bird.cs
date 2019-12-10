@@ -32,11 +32,15 @@ public class Bird : MonoBehaviour
             goScore.SetActive(true);    // 分數 顯示
             goGM.SetActive(true);       // GM 顯示
 
-            r2d.gravityScale = 1;                   // 剛體.重力 = 1
+            r2d.gravityScale = 2;                   // 剛體.重力 = 1
             r2d.Sleep();                            // 剛體.睡覺()
             r2d.AddForce(new Vector2(0, jump));     // 剛體.增加推力(二維向量)
 
             aud.PlayOneShot(soundJump, 1.5f);       // 音源.播放一次(音效片段，音量)
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            r2d.gravityScale = 10;
         }
 
         // velocity 剛體加速度 (x, y) 左右 x, 上下 y
@@ -63,6 +67,12 @@ public class Bird : MonoBehaviour
         //print("加分!");
         aud.PlayOneShot(soundAdd, 2);
         gm.AddScore(1);
+    }
+
+    private void Start()
+    {
+        // 螢幕.設定解析度(寬，高，是否全螢幕)
+        Screen.SetResolution(450, 800, false);
     }
 
     // 監聽玩家輸入：滑鼠、鍵盤、搖桿
