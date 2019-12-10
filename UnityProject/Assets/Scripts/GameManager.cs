@@ -101,5 +101,8 @@ public class GameManager : MonoBehaviour
         // 遊戲開始 更新 最高分數介面
         scoreHeight = PlayerPrefs.GetInt("最高分數");
         textHeight.text = scoreHeight.ToString();
+
+        // 靜態欄位會保留上次的值，必須要重新設定
+        Ground.speed = 5;
     }
 }
